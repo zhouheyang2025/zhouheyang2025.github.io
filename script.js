@@ -1,10 +1,17 @@
 document.documentElement.classList.add("js-enabled");
 
 const previewLayer = document.querySelector(".project-preview");
-const previewRows = document.querySelectorAll("[data-preview]");
+const previewRows = document.querySelectorAll("[data-preview-images], [data-preview]");
+
+function getPreviewImages(row) {
+  const imageList = row.dataset.previewImages || row.dataset.preview || "";
+
+  return imageList.split(/\s+/).filter(Boolean);
+}
 
 function showProjectPreview(row) {
-  const imagePath = row.dataset.preview;
+  const imagePaths = getPreviewImages(row);
+  const imagePath = imagePaths[Math.floor(Math.random() * imagePaths.length)];
 
   if (!previewLayer || !imagePath) {
     hideProjectPreview();

@@ -51,14 +51,15 @@ a:focus-visible {
   z-index: 0;
   pointer-events: none;
   background-position: center;
+  background-repeat: no-repeat;
   background-size: cover;
   opacity: 0;
   filter: grayscale(1);
-  transition: opacity 700ms ease;
+  transition: opacity 650ms ease;
 }
 
 body.has-project-preview .project-preview {
-  opacity: 0.12;
+  opacity: 0.18;
 }
 
 /* Site frame */
@@ -466,6 +467,72 @@ main {
   grid-column: span 3;
 }
 
+.gallery-group {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: var(--gap);
+}
+
+.gallery-sequence {
+  gap: clamp(28px, 4vw, 58px);
+}
+
+.gallery-sequence .gallery-group {
+  gap: clamp(10px, 1.4vw, 20px);
+}
+
+.gallery-sequence .image-placeholder {
+  display: block;
+  min-height: 0;
+}
+
+.gallery-sequence .image-placeholder img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-sequence .image-wide,
+.gallery-sequence .image-grid-2,
+.gallery-sequence .image-grid-3 {
+  aspect-ratio: auto;
+  min-height: 0;
+}
+
+.gallery-sequence .gallery-group-b .image-grid-3 {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  aspect-ratio: 1.45;
+  place-items: stretch;
+}
+
+.gallery-sequence .gallery-group-b .image-grid-3 img {
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-group + .gallery-group {
+  padding-top: clamp(22px, 3vw, 42px);
+  border-top: 1px solid var(--line);
+}
+
+.image-placeholder.image-grid-2 {
+  grid-column: span 6;
+}
+
+.image-placeholder.image-grid-3 {
+  grid-column: span 4;
+  min-height: clamp(180px, 21vw, 320px);
+}
+
+.gallery-sequence .image-placeholder.image-grid-3 {
+  min-height: 0;
+}
+
 .image-placeholder figcaption {
   align-self: end;
   justify-self: stretch;
@@ -726,8 +793,14 @@ main {
   .image-placeholder.image-wide,
   .image-placeholder.image-evidence,
   .image-placeholder.image-detail,
-  .image-placeholder.image-small {
+  .image-placeholder.image-small,
+  .image-placeholder.image-grid-2,
+  .image-placeholder.image-grid-3 {
     grid-column: 1;
+  }
+
+  .gallery-group {
+    grid-template-columns: 1fr;
   }
 
   .site-footer span:last-child {

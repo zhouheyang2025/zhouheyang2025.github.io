@@ -13,16 +13,21 @@ This file uses placeholder image IDs only. Website filenames and source filename
 - Update this manifest before changing image order, captions, layout classes, or website filenames.
 - Each project `<figure>` should include the matching `data-image-id` attribute.
 
+# Image Manifest
+
 ## Land of Fish and Rice
 
-| Order | Image ID | Website filename | Current layout class | Caption / role | Status |
-| --- | --- | --- | --- | --- | --- |
-| 01 | `fish-rice-01-hero` | TBD | `image-wide` | Domestic investigation / full scene | Placeholder |
-| 02 | `fish-rice-02-evidence-tagging` | TBD | `image-evidence` | Evidence tags on meal residue | Placeholder |
-| 03 | `fish-rice-03-weighing` | TBD | `image-detail` | Separated remains and weighing record | Placeholder |
-| 04 | `fish-rice-04-price-label` | TBD | `image-detail` | Price-label coding system | Placeholder |
-| 05 | `fish-rice-05-restored-scene` | TBD | `image-wide` | Coded objects returned to the home | Placeholder |
-
+| Order | Image ID | File path | Section | Layout | Caption | Status |
+|---|---|---|---|---|---|---|
+| 1 | fish-rice-a1-table-overview | assets/images/fish-rice/fish-rice-a1-table-overview.png | overview-gallery-a | image-wide | Overall dining table scene with domestic leftovers. | placed |
+| 2 | fish-rice-a2-tagged-table | assets/images/fish-rice/fish-rice-a2-tagged-table.png | overview-gallery-a | image-wide | Meal remains marked with evidence-like tags. | placed |
+| 3 | fish-rice-b1-residue-collection | assets/images/fish-rice/fish-rice-b1-residue-collection.png | evidence-gallery-b | image-grid-3 | Residues collected and separated for investigation. | placed |
+| 4 | fish-rice-b2-weighing | assets/images/fish-rice/fish-rice-b2-weighing.png | evidence-gallery-b | image-grid-3 | Rice grains and fish bones are individually weighed. | placed |
+| 5 | fish-rice-b3-price-label-detail | assets/images/fish-rice/fish-rice-b3-price-label-detail.png | evidence-gallery-b | image-grid-3 | Price-label and QR-code system applied to domestic remains. | placed |
+| 6 | fish-rice-c1-home-top-left | assets/images/fish-rice/fish-rice-c1-home-top-left.jpg | restored-scene-gallery-c | image-grid-2 | Coded remains returned to the home. | placed |
+| 7 | fish-rice-c2-home-top-right | assets/images/fish-rice/fish-rice-c2-home-top-right.jpg | restored-scene-gallery-c | image-grid-2 | Domestic corner with suspended remains. | placed |
+| 8 | fish-rice-c3-home-bottom-left | assets/images/fish-rice/fish-rice-c3-home-bottom-left.jpg | restored-scene-gallery-c | image-grid-2 | Family interior as an evidence field. | placed |
+| 9 | fish-rice-c4-home-bottom-right | assets/images/fish-rice/fish-rice-c4-home-bottom-right.jpg | restored-scene-gallery-c | image-grid-2 | Quiet accumulation of coded leftovers in space. | placed |
 ## Gewu / Investigation
 
 | Order | Image ID | Website filename | Current layout class | Caption / role | Status |
