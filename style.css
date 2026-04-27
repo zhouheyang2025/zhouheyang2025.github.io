@@ -160,6 +160,29 @@ main {
   border-top: 1px solid var(--line-strong);
 }
 
+.related-branch {
+  grid-column: 2;
+  max-width: 360px;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+}
+
+.related-branch a,
+.text-link-row a,
+.project-meta-panel a,
+.site-footer-link {
+  border-bottom: 1px solid currentColor;
+}
+
+.related-branch p,
+.text-link-row {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
 .project-row {
   display: grid;
   grid-template-columns: 44px minmax(0, 1fr);
@@ -518,11 +541,16 @@ main {
 }
 
 .site-footer span:first-child {
-  grid-column: 1 / span 4;
+  grid-column: 1 / span 3;
+}
+
+.site-footer-link {
+  grid-column: 5 / span 3;
+  justify-self: start;
 }
 
 .site-footer span:last-child {
-  grid-column: 8 / -1;
+  grid-column: 9 / -1;
   text-align: right;
 }
 
@@ -547,6 +575,14 @@ main {
   .site-nav,
   .site-footer span:last-child {
     grid-column: 3 / -1;
+  }
+
+  .site-footer-link {
+    grid-column: 3 / span 2;
+  }
+
+  .site-footer span:last-child {
+    grid-column: 5 / -1;
   }
 
   .statement {
@@ -608,6 +644,7 @@ main {
   .archive-mark,
   .statement,
   .project-index,
+  .related-branch,
   .page-intro .archive-mark,
   .page-intro h1,
   .page-note,
@@ -617,6 +654,7 @@ main {
   .project-section .section-number,
   .project-section > div,
   .site-footer span:first-child,
+  .site-footer-link,
   .site-footer span:last-child {
     grid-column: 1;
   }
