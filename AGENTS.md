@@ -98,3 +98,30 @@ Do not touch files outside this project folder.
 Do not add API keys, tokens, passwords, or private information.
 Do not install large dependencies without asking first.
 Do not push to GitHub unless I explicitly ask.
+## Image workflow
+
+All website images must be controlled through stable image IDs.
+
+Rules:
+
+1. Do not use raw image files directly from `source-indesign/01-raw-package/Links/`.
+2. Copy selected images into `assets/images/`, grouped by project.
+3. Use lowercase English filenames with hyphens.
+4. Each website image must have a stable Image ID.
+5. Each `<figure>` should include a `data-image-id` attribute.
+6. Use the image manifest at `source-indesign/04-image-manifest/image-manifest.md` as the source of truth for image order, captions, sections, and layout.
+7. Do not delete original raw images.
+8. Do not rename website images without updating `image-manifest.md`.
+9. When changing image positions, refer to Image IDs, not vague descriptions.
+10. Keep image layouts restrained, archival, and grid-based.
+
+Available layout classes:
+
+- image-hero
+- image-wide
+- image-grid-2
+- image-grid-3
+- image-small
+- image-strip
+- image-evidence
+- image-detail
