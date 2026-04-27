@@ -22,9 +22,9 @@ The site is a plain HTML/CSS/JavaScript portfolio archive. It currently contains
 | No. | Project | File | Current state | Images | Text refinement |
 | --- | --- | --- | --- | --- | --- |
 | 01 | Land of Fish and Rice | `works/fish-and-rice.html` | Structurally complete draft | Needs final website images for all figure placeholders | Needs final captions and tighter application-oriented text |
-| 02 | Gewu / Investigation | `works/gewu.html` | Structurally complete draft | Needs final website images for all figure placeholders | Needs final captions and material/process wording |
+| 02 | Arch / Column | `works/arch-column.html` | Structurally complete draft | Needs final website images for all figure placeholders | Needs final captions and spatial/context wording |
 | 03 | Synthetic Diamond | `works/synthetic-diamond.html` | Structurally complete draft | Needs final website images for all figure placeholders | Needs final captions and sharper conceptual framing |
-| 04 | Arch / Column | `works/arch-column.html` | Structurally complete draft | Needs final website images for all figure placeholders | Needs final captions and spatial/context wording |
+| 04 | Gewu / Investigation | `works/gewu.html` | Structurally complete draft | Needs final website images for all figure placeholders | Needs final captions and material/process wording |
 
 ## Pages Considered Complete
 

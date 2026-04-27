@@ -28,14 +28,14 @@ This file uses placeholder image IDs only. Website filenames and source filename
 | 7 | fish-rice-c2-home-top-right | assets/images/fish-rice/fish-rice-c2-home-top-right.jpg | restored-scene-gallery-c | image-grid-2 | Domestic corner with suspended remains. | placed |
 | 8 | fish-rice-c3-home-bottom-left | assets/images/fish-rice/fish-rice-c3-home-bottom-left.jpg | restored-scene-gallery-c | image-grid-2 | Family interior as an evidence field. | placed |
 | 9 | fish-rice-c4-home-bottom-right | assets/images/fish-rice/fish-rice-c4-home-bottom-right.jpg | restored-scene-gallery-c | image-grid-2 | Quiet accumulation of coded leftovers in space. | placed |
-## Gewu / Investigation
+## Arch / Column
 
 | Order | Image ID | Website filename | Current layout class | Caption / role | Status |
 | --- | --- | --- | --- | --- | --- |
-| 01 | `gewu-01-overview` | TBD | `image-wide` | Object group and measurement logic | Placeholder |
-| 02 | `gewu-02-measurement-frame` | TBD | `image-evidence` | Stainless steel measurement frame | Placeholder |
-| 03 | `gewu-03-dried-fruit` | TBD | `image-detail` | Dried fruit held by the frame | Placeholder |
-| 04 | `gewu-04-drawing-system` | TBD | `image-detail` | Drawing system translated into object | Placeholder |
+| 01 | `arch-column-01-installation` | TBD | `image-wide` | Human-scale installation view | Placeholder |
+| 02 | `arch-column-02-denim-arch` | TBD | `image-evidence` | Denim arch between separated columns | Placeholder |
+| 03 | `arch-column-03-doormat` | TBD | `image-detail` | Entry mat with body impressions | Placeholder |
+| 04 | `arch-column-04-lock-bell` | TBD | `image-detail` | Lock and bell threshold hardware | Placeholder |
 
 ## Synthetic Diamond
 
@@ -45,14 +45,14 @@ This file uses placeholder image IDs only. Website filenames and source filename
 | 02 | `synthetic-diamond-02-ring` | TBD | `image-detail` | Ring structure and tablet-like form | Placeholder |
 | 03 | `synthetic-diamond-03-detail` | TBD | `image-detail` | Geometric setting detail | Placeholder |
 
-## Arch / Column
+## Gewu / Investigation
 
 | Order | Image ID | Website filename | Current layout class | Caption / role | Status |
 | --- | --- | --- | --- | --- | --- |
-| 01 | `arch-column-01-installation` | TBD | `image-wide` | Human-scale installation view | Placeholder |
-| 02 | `arch-column-02-denim-arch` | TBD | `image-evidence` | Denim arch between separated columns | Placeholder |
-| 03 | `arch-column-03-doormat` | TBD | `image-detail` | Entry mat with body impressions | Placeholder |
-| 04 | `arch-column-04-lock-bell` | TBD | `image-detail` | Lock and bell threshold hardware | Placeholder |
+| 01 | `gewu-01-overview` | TBD | `image-wide` | Object group and measurement logic | Placeholder |
+| 02 | `gewu-02-measurement-frame` | TBD | `image-evidence` | Stainless steel measurement frame | Placeholder |
+| 03 | `gewu-03-dried-fruit` | TBD | `image-detail` | Dried fruit held by the frame | Placeholder |
+| 04 | `gewu-04-drawing-system` | TBD | `image-detail` | Drawing system translated into object | Placeholder |
 
 ## Next Image-Control Pass
 

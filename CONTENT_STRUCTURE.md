@@ -40,19 +40,19 @@ Possible sections:
 - restored scene
 - documentation images
 
-### 02 Gewu / Investigation
+### 02 Arch / Column
 
 Core idea:
-Engineering drawing and measurement systems are transformed into physical jewelry frames, questioning whether measurement is neutral or subjective.
+Architectural symbols of authority are transformed into bodily thresholds, using columns, denim, and entry gestures to question power, masculinity, and passage.
 
 Materials / media:
-laser-cut stainless steel, arc welding, dried fruit, jewelry objects, measurement symbols, drawing logic
+Doric columns, denim, red doormat, locks, bells, installation space
 
 Tone:
-precise, analytical, controlled, incomplete
+spatial, public, bodily, architectural, slightly absurd
 
 Page direction:
-The page should combine object photography with diagrams, measurement marks, and material details.
+The page should emphasize scale, passage, human body, and threshold.
 
 ### 03 Synthetic Diamond
 
@@ -68,19 +68,19 @@ critical, witty, restrained, artificial
 Page direction:
 The page should not look like a product page. It should look like a material-symbol investigation.
 
-### 04 Arch / Column
+### 04 Gewu / Investigation
 
 Core idea:
-Architectural symbols of authority are transformed into bodily thresholds, using columns, denim, and entry gestures to question power, masculinity, and passage.
+Engineering drawing and measurement systems are transformed into physical jewelry frames, questioning whether measurement is neutral or subjective.
 
 Materials / media:
-Doric columns, denim, red doormat, locks, bells, installation space
+laser-cut stainless steel, arc welding, dried fruit, jewelry objects, measurement symbols, drawing logic
 
 Tone:
-spatial, public, bodily, architectural, slightly absurd
+precise, analytical, controlled, incomplete
 
 Page direction:
-The page should emphasize scale, passage, human body, and threshold.
+The page should combine object photography with diagrams, measurement marks, and material details.
 
 ## Future content / self-media section
 
