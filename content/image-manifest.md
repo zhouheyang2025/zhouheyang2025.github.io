@@ -1,6 +1,6 @@
 # Image Manifest
 
-Controlled image registry for the four project pages.
+Controlled image registry for the four project pages and Works page cover assets.
 
 ## Rules
 
@@ -11,6 +11,17 @@ Controlled image registry for the four project pages.
 - Update this manifest before changing image order, captions, layout classes, or website filenames.
 - Each project `<figure>` should include the matching `data-image-id` attribute.
 - Project image layouts use row labels A, B, C, D... and row image numbers A1, A2, A3...
+
+## Works Page Covers
+
+These images are used only as project index cover images on `works.html`. They are separate from project-page narrative images.
+
+| Order | Image ID | File path | Project | Section | Caption / use | Status |
+|---|---|---|---|---|---|---|
+| 1 | work-cover-01-fish-rice | assets/images/works-covers/work-cover-01-fish-rice.webp | Land of Fish and Rice | works-page-cover | Project index cover image only. | placed |
+| 2 | work-cover-02-arch-column | assets/images/works-covers/work-cover-02-arch-column.webp | Arch / Column | works-page-cover | Project index cover image only. | placed |
+| 3 | work-cover-03-synthetic-diamond | assets/images/works-covers/work-cover-03-synthetic-diamond.webp | Synthetic Diamond | works-page-cover | Project index cover image only. | placed |
+| 4 | work-cover-04-gewu | assets/images/works-covers/work-cover-04-gewu.webp | Gewu / Investigation | works-page-cover | Project index cover image only. | placed |
 
 ## Land of Fish and Rice
 
@@ -94,15 +105,22 @@ These lightweight images are derived from the placed project images above and ar
 
 | Order | Row | Row type | Image ID | File path | Project | Page section | Caption draft | Status |
 |---|---|---|---|---|---|---|---|---|
-| 1 | A | single-wide | gewu-a1-drawing-system | TBD | Gewu / Investigation | drawing system | Drawing system translated into a measurement field. | placeholder |
-| 2 | B | triple-lll | gewu-b1-laser-cutting | TBD | Gewu / Investigation | fabrication process | Laser cutting process for stainless components. | placeholder |
-| 3 | B | triple-lll | gewu-b2-welding-assembly | TBD | Gewu / Investigation | fabrication process | Arc welding and assembly of the measuring frame. | placeholder |
-| 4 | B | triple-lll | gewu-b3-cut-steel-sheet | TBD | Gewu / Investigation | fabrication process | Cut stainless sheet with measurement signs. | placeholder |
-| 5 | C | single-wide | gewu-c1-object-overview | TBD | Gewu / Investigation | measurement object overview | Object group and measurement logic. | placeholder |
-| 6 | D | double-ll | gewu-d1-measurement-frame | TBD | Gewu / Investigation | measurement frame details | Stainless steel measurement frame. | placeholder |
-| 7 | D | double-ll | gewu-d2-frame-detail | TBD | Gewu / Investigation | measurement frame details | Frame detail with numeric and arc markers. | placeholder |
-| 8 | E | double-ll | gewu-e1-dried-fruit | TBD | Gewu / Investigation | organic material | Dried fruit held by the frame. | placeholder |
-| 9 | E | double-ll | gewu-e2-organic-sequence | TBD | Gewu / Investigation | organic material | Organic material sequence inside measurement structures. | placeholder |
+| 1 | A | double-pl | gewu-a1-drawing-system | assets/images/gewu/gewu-a1-drawing-system.webp | Gewu / Investigation | drawing system and fabrication | Drawing system translated into a measurement field. | placed |
+| 2 | A | double-pl | gewu-a2-stainless-laser-cutting | assets/images/gewu/gewu-a2-stainless-laser-cutting.webp | Gewu / Investigation | drawing system and fabrication | Laser cutting process for stainless components. | placed |
+| 3 | B | double-ll | gewu-b1-dried-fruit-seedpod | assets/images/gewu/gewu-b1-dried-fruit-seedpod.webp | Gewu / Investigation | dried fruit and measurement frames | Dried seedpod held by a stainless measurement frame. | placed |
+| 4 | B | double-ll | gewu-b2-dried-fruit-cotton | assets/images/gewu/gewu-b2-dried-fruit-cotton.webp | Gewu / Investigation | dried fruit and measurement frames | Cotton and dried fruit inside a measurement structure. | placed |
+| 5 | C | double-ll | gewu-c1-dried-fruit-ground | assets/images/gewu/gewu-c1-dried-fruit-ground.webp | Gewu / Investigation | object sequence | Object sequence with dried fruit and measurement frames. | placed |
+| 6 | C | double-ll | gewu-c2-dried-fruit-heart | assets/images/gewu/gewu-c2-dried-fruit-heart.webp | Gewu / Investigation | object sequence | Heart-shaped dried fruit held inside the measuring system. | placed |
+
+### Gewu / Investigation / Homepage Preview Derivatives
+
+These lightweight images are derived from the placed Gewu project images above and are used only for the `index.html` project-row hover preview.
+
+| Order | Image ID | File path | Section | Layout | Caption | Status |
+|---|---|---|---|---|---|---|
+| 1 | gewu-preview-a1-drawing-system | assets/images/gewu/previews/gewu-preview-a1-drawing-system.webp | homepage-preview | image-evidence | Lightweight homepage preview derived from the drawing system image. | placed |
+| 2 | gewu-preview-a2-stainless-laser-cutting | assets/images/gewu/previews/gewu-preview-a2-stainless-laser-cutting.webp | homepage-preview | image-evidence | Lightweight homepage preview derived from stainless laser-cutting documentation. | placed |
+| 3 | gewu-preview-c2-dried-fruit-heart | assets/images/gewu/previews/gewu-preview-c2-dried-fruit-heart.webp | homepage-preview | image-evidence | Lightweight homepage preview derived from the heart-shaped dried fruit frame. | placed |
 
 ## Next Image-Control Pass
 
