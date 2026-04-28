@@ -67,6 +67,21 @@ a:focus-visible {
   height: 100%;
   object-fit: cover;
   filter: grayscale(1) contrast(0.92);
+  opacity: 0;
+  transform: scale(1.018);
+  will-change: opacity, transform;
+  transition:
+    opacity 900ms ease,
+    transform 1200ms ease;
+}
+
+body.has-project-preview .project-preview-image.is-active {
+  opacity: 1;
+  transform: scale(1.012);
+}
+
+.project-preview-image.is-active {
+  opacity: 1;
   transform: scale(1.012);
 }
 
@@ -1132,4 +1147,7 @@ main {
   .project-preview {
     transition: none;
   }
+}
+body:not(.has-project-preview) .project-preview-image {
+  opacity: 0;
 }

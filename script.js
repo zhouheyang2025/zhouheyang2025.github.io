@@ -2,30 +2,37 @@ document.documentElement.classList.add("js-enabled");
 
 const previewLayer = document.querySelector(".project-preview");
 const previewRows = document.querySelectorAll("[data-preview-images], [data-preview]");
-const previewImage = previewLayer ? document.createElement("img") : null;
-const preloadedImages = new Map();
-let activePreviewPath = "";
-let requestedPreviewPath = "";
 
-if (previewImage) {
-  previewImage.className = "project-preview-image";
-  previewImage.alt = "";
-  previewImage.decoding = "async";
-  previewImage.loading = "eager";
-  previewImage.setAttribute("aria-hidden", "true");
-  previewLayer.appendChild(previewImage);
+const preloadedImages = new Map();
+
+let requestedPreviewPath = "";
+let activePreviewPath = "";
+let activeSlotIndex = 0;
+
+const previewSlots = previewLayer
+  ? [createPreviewImage(), createPreviewImage()]
+  : [];
+
+function createPreviewImage() {
+  const image = document.createElement("img");
+  image.className = "project-preview-image";
+  image.alt = "";
+  image.decoding = "async";
+  image.loading = "eager";
+  image.setAttribute("aria-hidden", "true");
+
+  previewLayer.appendChild(image);
+
+  return image;
 }
 
 function getPreviewImages(row) {
   const imageList = row.dataset.previewImages || row.dataset.preview || "";
-
   return imageList.split(/\s+/).filter(Boolean);
 }
 
 function preloadPreviewImage(imagePath) {
-  if (!imagePath) {
-    return null;
-  }
+  if (!imagePath) return null;
 
   if (preloadedImages.has(imagePath)) {
     return preloadedImages.get(imagePath);
@@ -88,13 +95,31 @@ function choosePreviewImage(row) {
 function showProjectPreview(row) {
   const imagePath = choosePreviewImage(row);
 
-  if (!previewLayer || !previewImage || !imagePath) {
+  if (!previewLayer || !previewSlots.length || !imagePath) {
     hideProjectPreview();
     return;
   }
 
   requestedPreviewPath = imagePath;
 
+  const isPreviewVisible = document.body.classList.contains("has-project-preview");
+  const isShowingNewImage = imagePath !== activePreviewPath;
+
+  /*
+    If the preview layer is currently hidden and we are about to show
+    a different image, clear the active image first.
+    This prevents the old preview image from flashing before the new one appears.
+  */
+  if (!isPreviewVisible && isShowingNewImage) {
+    previewSlots.forEach((slot) => {
+      slot.classList.remove("is-active");
+    });
+  }
+
+  /*
+    If the requested image is already active, simply show the layer.
+    This mainly matters for projects with only one preview image.
+  */
   if (imagePath === activePreviewPath) {
     document.body.classList.add("has-project-preview");
     return;
@@ -102,25 +127,61 @@ function showProjectPreview(row) {
 
   const cachedImage = preloadPreviewImage(imagePath);
 
+  if (!cachedImage) {
+    hideProjectPreview();
+    return;
+  }
+
   cachedImage.ready.then(() => {
     if (requestedPreviewPath !== imagePath) {
       return;
     }
 
-    previewImage.src = imagePath;
-    activePreviewPath = imagePath;
+    crossfadeToImage(imagePath);
     document.body.classList.add("has-project-preview");
+  });
+}
+
+function crossfadeToImage(imagePath) {
+  const nextSlotIndex = activeSlotIndex === 0 ? 1 : 0;
+  const currentSlot = previewSlots[activeSlotIndex];
+  const nextSlot = previewSlots[nextSlotIndex];
+
+  nextSlot.src = imagePath;
+
+  requestAnimationFrame(() => {
+    nextSlot.classList.add("is-active");
+    currentSlot.classList.remove("is-active");
+
+    activeSlotIndex = nextSlotIndex;
+    activePreviewPath = imagePath;
   });
 }
 
 function hideProjectPreview() {
   requestedPreviewPath = "";
   document.body.classList.remove("has-project-preview");
+
+  /*
+    Wait until the preview layer has faded out before clearing the active image.
+    This keeps project-to-project crossfade smooth, while preventing old images
+    from flashing when the cursor leaves and re-enters the same project later.
+  */
+  window.setTimeout(() => {
+    if (!document.body.classList.contains("has-project-preview")) {
+      previewSlots.forEach((slot) => {
+        slot.classList.remove("is-active");
+      });
+
+      activePreviewPath = "";
+    }
+  }, 700);
 }
 
 previewRows.forEach((row) => {
   row.addEventListener("pointerenter", () => showProjectPreview(row));
   row.addEventListener("focus", () => showProjectPreview(row));
+
   row.addEventListener("pointerleave", hideProjectPreview);
   row.addEventListener("blur", hideProjectPreview);
 });
