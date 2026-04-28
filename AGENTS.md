@@ -125,3 +125,17 @@ Available layout classes:
 - image-strip
 - image-evidence
 - image-detail
+## PDF-to-web layout translation
+
+When adapting layouts from the PDF portfolio:
+
+1. Do not copy the PDF spread literally.
+2. Translate the PDF's hierarchy into responsive web layouts.
+3. Desktop and landscape views may preserve a horizontal, spread-like feeling.
+4. Mobile views must prioritize readable vertical order.
+5. Keep project pages aligned with the Fish and Rice layout system.
+6. Reuse existing gallery classes where possible.
+7. Only add new CSS classes when necessary.
+8. Keep figure elements and data-image-id attributes stable.
+9. Use image groupings rather than scattered individual images.
+10. Preserve the project's image hierarchy, not the exact print geometry.
