@@ -51,7 +51,7 @@ The homepage should contain:
 - artist name
 - short one-sentence practice statement
 - project index
-- navigation to Works / Notes / About / Contact
+- navigation to Works / About / Contact
 - one or two strong visual entries
 - no decorative hero slogan
 

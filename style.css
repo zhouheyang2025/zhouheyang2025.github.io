@@ -495,6 +495,10 @@ main {
   border-top: 1px solid var(--line-strong);
 }
 
+.process-steps-four {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
 .process-step {
   position: relative;
   display: grid;
@@ -542,7 +546,8 @@ main {
 .image-sequence {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  gap: var(--gap);
+  row-gap: clamp(26px, 4vw, 58px);
+  column-gap: var(--gap);
   padding: clamp(34px, 5vw, 68px) 0 clamp(76px, 10vw, 128px);
 }
 
@@ -653,7 +658,134 @@ main {
   min-height: clamp(320px, 42vw, 620px);
 }
 
+/* Row-based project image system */
+.image-row {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 10px var(--gap);
+  align-items: start;
+}
+
+.image-row::before {
+  grid-column: 1;
+  padding-top: 8px;
+  content: attr(data-row-label);
+  color: var(--quiet);
+  font-size: 0.68rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.image-row + .image-row {
+  padding-top: clamp(20px, 3vw, 42px);
+  border-top: 1px solid var(--line);
+}
+
+.row-single-wide,
+.row-single-portrait {
+  grid-template-columns: 28px minmax(0, 1fr);
+}
+
+.row-double-ll,
+.row-double-pp {
+  grid-template-columns: 28px repeat(2, minmax(0, 1fr));
+}
+
+.row-double-pl {
+  grid-template-columns: 28px minmax(0, 3fr) minmax(0, 5fr);
+}
+
+.row-double-lp {
+  grid-template-columns: 28px minmax(0, 5fr) minmax(0, 3fr);
+}
+
+.row-triple-lll,
+.row-triple-ppp {
+  grid-template-columns: 28px repeat(3, minmax(0, 1fr));
+}
+
+.row-triple-ppl {
+  grid-template-columns: 28px minmax(0, 3fr) minmax(0, 3fr) minmax(0, 5fr);
+}
+
+.row-triple-pll {
+  grid-template-columns: 28px minmax(0, 3fr) minmax(0, 5fr) minmax(0, 5fr);
+}
+
+.gallery-sequence .image-row .image-placeholder {
+  grid-column: auto;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  min-height: 0;
+  margin: 0;
+  align-content: stretch;
+  place-items: stretch;
+  aspect-ratio: var(--image-ratio, 4 / 3);
+}
+
+.image-row .image-placeholder::before,
+.image-row .image-placeholder::after {
+  display: none;
+}
+
+.image-row .image-placeholder img,
+.image-row .placeholder-box {
+  grid-row: 1;
+}
+
+.gallery-sequence .image-row .image-placeholder img {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-row .placeholder-box {
+  display: grid;
+  min-height: 0;
+  place-items: center;
+}
+
+.row-single-wide .image-placeholder {
+  --image-ratio: 16 / 9;
+}
+
+.synthetic-diamond-sequence [data-image-id="synthetic-diamond-a1-overview"] {
+  --image-ratio: 3 / 1;
+}
+
+.row-single-portrait .image-placeholder,
+.row-double-pp .image-placeholder,
+.row-triple-ppp .image-placeholder {
+  --image-ratio: 4 / 5;
+}
+
+.row-single-portrait .image-placeholder {
+  width: min(64%, 760px);
+  justify-self: center;
+}
+
+.row-double-pl .image-placeholder:first-of-type,
+.row-double-lp .image-placeholder:nth-of-type(2),
+.row-triple-ppl .image-placeholder:first-of-type,
+.row-triple-ppl .image-placeholder:nth-of-type(2),
+.row-triple-pll .image-placeholder:first-of-type {
+  --image-ratio: 4 / 5;
+}
+
+.row-double-pl .image-placeholder:nth-of-type(2),
+.row-double-lp .image-placeholder:first-of-type,
+.row-triple-ppl .image-placeholder:nth-of-type(3),
+.row-triple-pll .image-placeholder:nth-of-type(2),
+.row-triple-pll .image-placeholder:nth-of-type(3) {
+  --image-ratio: 4 / 3;
+}
+
 .image-placeholder figcaption {
+  grid-row: 2;
   align-self: end;
   justify-self: stretch;
   padding: 10px 12px;
@@ -670,31 +802,7 @@ main {
   text-transform: uppercase;
 }
 
-/* Notes, about, contact */
-[aria-labelledby="notes-title"] .project-section {
-  padding: clamp(26px, 4.2vw, 48px) 0;
-}
-
-[aria-labelledby="notes-title"] .project-section > div {
-  display: grid;
-  grid-template-columns: minmax(0, 0.65fr) minmax(0, 1fr);
-  gap: var(--gap);
-  grid-column: 5 / -1;
-  align-items: baseline;
-}
-
-[aria-labelledby="notes-title"] .project-section h2 {
-  margin: 0;
-}
-
-[aria-labelledby="notes-title"] .project-section p {
-  max-width: none;
-  color: var(--quiet);
-  font-size: 0.68rem;
-  line-height: 1.45;
-  text-transform: uppercase;
-}
-
+/* About, contact */
 [aria-labelledby="about-title"] .project-section > div {
   grid-column: 5 / span 5;
 }
@@ -811,11 +919,24 @@ main {
     grid-column: span 3;
   }
 
+  .row-triple-lll,
+  .row-triple-ppp,
+  .row-triple-ppl,
+  .row-triple-pll {
+    grid-template-columns: 28px repeat(2, minmax(0, 1fr));
+  }
+
+  .row-triple-lll .image-placeholder:nth-of-type(3),
+  .row-triple-ppp .image-placeholder:nth-of-type(3),
+  .row-triple-ppl .image-placeholder:nth-of-type(3),
+  .row-triple-pll .image-placeholder:nth-of-type(3) {
+    grid-column: 2 / -1;
+  }
+
   .image-placeholder.large {
     grid-column: 1 / -1;
   }
 
-  [aria-labelledby="notes-title"] .project-section > div,
   [aria-labelledby="about-title"] .project-section > div,
   [aria-labelledby="contact-title"] .project-meta-panel dl {
     grid-column: 3 / -1;
@@ -951,19 +1072,52 @@ main {
     grid-template-columns: 1fr;
   }
 
+  .image-row,
+  .row-single-wide,
+  .row-single-portrait,
+  .row-double-ll,
+  .row-double-pp,
+  .row-double-pl,
+  .row-double-lp,
+  .row-triple-lll,
+  .row-triple-ppp,
+  .row-triple-ppl,
+  .row-triple-pll {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .image-row::before {
+    grid-column: 1;
+    padding-top: 0;
+  }
+
+  .gallery-sequence .image-row .image-placeholder,
+  .row-single-portrait .image-placeholder,
+  .row-triple-lll .image-placeholder:nth-of-type(3),
+  .row-triple-ppp .image-placeholder:nth-of-type(3),
+  .row-triple-ppl .image-placeholder:nth-of-type(3),
+  .row-triple-pll .image-placeholder:nth-of-type(3) {
+    grid-column: 1;
+    width: 100%;
+    max-width: none;
+  }
+
+  .row-single-wide .image-placeholder {
+    --image-ratio: 4 / 3;
+  }
+
+  .synthetic-diamond-sequence [data-image-id="synthetic-diamond-a1-overview"] {
+    --image-ratio: 2.4 / 1;
+  }
+
   .site-footer span:last-child {
     text-align: left;
   }
 
-  [aria-labelledby="notes-title"] .project-section > div,
   [aria-labelledby="about-title"] .project-section > div,
   [aria-labelledby="contact-title"] .project-meta-panel dl {
     grid-column: 1;
-  }
-
-  [aria-labelledby="notes-title"] .project-section > div {
-    grid-template-columns: 1fr;
-    gap: 8px;
   }
 }
 

@@ -12,7 +12,6 @@ The site is a plain HTML/CSS/JavaScript portfolio archive. It currently contains
 | --- | --- | --- | --- | --- |
 | Home / Archive Index | `index.html` | Structurally complete draft | Needs project preview images or controlled preview strategy | Needs final artist statement polish |
 | Works Index | `works.html` | Structurally complete draft | Needs thumbnail images for all four works | Needs final project summaries after image selection |
-| Notes | `notes.html` | Placeholder page | No images planned yet | Needs real notes, research fragments, or application-related writing |
 | About | `about.html` | Draft page | No images planned yet | Needs final biography, application language, and possibly German/English refinement |
 | Contact | `contact.html` | Placeholder page | No images planned | Needs real email, social/contact details, and final public wording |
 | Project Template | `project-template.html` | Reference template | Not a public content page | Keep as editable structure reference |
@@ -34,7 +33,6 @@ These pages are complete as first-version page structures:
 - `works.html`
 - `about.html`
 - `contact.html`
-- `notes.html`
 - `works/fish-and-rice.html`
 - `works/gewu.html`
 - `works/synthetic-diamond.html`
@@ -59,7 +57,6 @@ Priority text refinement:
 
 - `about.html`: final biography, practice statement, and application-facing language.
 - `contact.html`: real contact details and final public wording.
-- `notes.html`: real research/process note content.
 - `works/*.html`: final captions, project descriptions, material details, and application-oriented language.
 - `index.html`: final short artist statement.
 - `works.html`: final short summaries after image order is confirmed.

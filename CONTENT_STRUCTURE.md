@@ -6,11 +6,8 @@ The website should eventually include:
 
 - Home
 - Works
-- Notes
 - About
 - Contact
-
-The Notes section can be used later for self-media writing, research notes, process documentation, and short reflections.
 
 For the first version, prioritize Home, Works, one Project template, and About.
 
@@ -81,16 +78,3 @@ precise, analytical, controlled, incomplete
 
 Page direction:
 The page should combine object photography with diagrams, measurement marks, and material details.
-
-## Future content / self-media section
-
-The Notes section can later include:
-
-- process notes
-- German study notes related to art / theatre / design
-- material experiments
-- research references
-- short essays on space, object, power, and theatre
-
-Notes should not look like a casual blog.
-They should feel like research fragments or studio records.
