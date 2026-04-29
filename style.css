@@ -858,17 +858,6 @@ body.lang-zh .statement {
   --image-ratio: 1100 / 389;
 }
 
-@media (min-width: 621px) {
-  .fish-rice-sequence .row-single-wide {
-    grid-template-columns: minmax(0, 1fr);
-  }
-
-  .fish-rice-sequence .row-single-wide::before {
-    grid-column: 1;
-    padding-top: 0;
-  }
-}
-
 .gallery-sequence .image-row [data-image-id="fish-rice-a1-table-overview"] img,
 .gallery-sequence .image-row [data-image-id="fish-rice-b1-tagged-table"] img,
 .gallery-sequence .image-row [data-image-id="fish-rice-a2-tagged-table"] img {
