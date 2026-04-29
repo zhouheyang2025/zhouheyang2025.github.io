@@ -1457,4 +1457,13 @@ body:not(.has-project-preview) .project-preview-image {
   .fish-rice-sequence .image-row > .image-placeholder {
     grid-column: 1 / -1 !important;
   }
+
+  .fish-rice-sequence .row-single-wide > .image-placeholder {
+    --image-ratio: 12 / 5;
+  }
+
+  .fish-rice-sequence .row-single-wide > .image-placeholder img {
+    object-fit: cover;
+    object-position: center;
+  }
 }
