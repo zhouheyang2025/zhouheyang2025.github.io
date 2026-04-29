@@ -1363,3 +1363,98 @@ body.lang-zh .statement {
 body:not(.has-project-preview) .project-preview-image {
   opacity: 0;
 }
+
+/* Fish and Rice alignment override */
+.fish-rice-sequence .image-row {
+  position: relative;
+  grid-column: 1 / -1;
+  display: grid;
+  gap: var(--gap);
+  padding-left: 0;
+  grid-template-columns: repeat(var(--fish-rice-row-columns, 1), minmax(0, 1fr)) !important;
+}
+
+.fish-rice-sequence .image-row::before {
+  position: absolute;
+  left: clamp(-58px, -3.8vw, -34px);
+  top: 0.45rem;
+  width: 28px;
+  padding: 0;
+  content: attr(data-row-label);
+  color: var(--quiet);
+  font-size: 0.68rem;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.fish-rice-sequence .row-single-wide {
+  --fish-rice-row-columns: 1;
+}
+
+.fish-rice-sequence .row-double-ll,
+.fish-rice-sequence .row-double-pp,
+.fish-rice-sequence .row-double-pl,
+.fish-rice-sequence .row-double-lp {
+  --fish-rice-row-columns: 2;
+}
+
+.fish-rice-sequence .row-triple-lll,
+.fish-rice-sequence .row-triple-ppp,
+.fish-rice-sequence .row-triple-ppl,
+.fish-rice-sequence .row-triple-pll {
+  --fish-rice-row-columns: 3;
+}
+
+.fish-rice-sequence .image-row > .image-placeholder {
+  grid-column: auto !important;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+}
+
+.fish-rice-sequence .row-single-wide > .image-placeholder {
+  grid-column: 1 / -1 !important;
+  width: 100%;
+}
+
+.fish-rice-sequence .image-placeholder img {
+  width: 100%;
+}
+
+@media (min-width: 861px) {
+  .fish-rice-sequence .row-single-wide > .image-placeholder {
+    aspect-ratio: auto;
+  }
+
+  .fish-rice-sequence .row-single-wide > .image-placeholder img {
+    height: auto;
+  }
+}
+
+@media (max-width: 620px) {
+  .fish-rice-sequence .image-row {
+    grid-template-columns: repeat(var(--fish-rice-mobile-row-columns, 1), minmax(0, 1fr)) !important;
+    gap: 8px;
+  }
+
+  .fish-rice-sequence .image-row::before {
+    position: static;
+    grid-column: 1 / -1;
+    width: auto;
+  }
+
+  .fish-rice-sequence .row-double-ll,
+  .fish-rice-sequence .row-double-pp,
+  .fish-rice-sequence .row-double-pl,
+  .fish-rice-sequence .row-double-lp,
+  .fish-rice-sequence .row-triple-lll,
+  .fish-rice-sequence .row-triple-ppp,
+  .fish-rice-sequence .row-triple-ppl,
+  .fish-rice-sequence .row-triple-pll {
+    --fish-rice-mobile-row-columns: 1;
+  }
+
+  .fish-rice-sequence .image-row > .image-placeholder {
+    grid-column: 1 / -1 !important;
+  }
+}
