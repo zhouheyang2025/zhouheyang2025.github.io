@@ -858,15 +858,33 @@ body.lang-zh .statement {
   --image-ratio: 1100 / 389;
 }
 
+@media (min-width: 621px) {
+  .fish-rice-sequence .row-single-wide {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .fish-rice-sequence .row-single-wide::before {
+    grid-column: 1;
+    padding-top: 0;
+  }
+}
+
 .gallery-sequence .image-row [data-image-id="fish-rice-a1-table-overview"] img,
 .gallery-sequence .image-row [data-image-id="fish-rice-b1-tagged-table"] img,
-.gallery-sequence .image-row [data-image-id="fish-rice-a2-tagged-table"] img,
-.gallery-sequence .image-row [data-image-id="arch-column-a1-installation-overview"] img {
+.gallery-sequence .image-row [data-image-id="fish-rice-a2-tagged-table"] img {
   object-fit: contain;
 }
 
 .gallery-sequence .image-row [data-image-id="arch-column-a1-installation-overview"] {
-  --image-ratio: 2 / 3;
+  --image-ratio: 4 / 5;
+}
+
+.gallery-sequence .image-row [data-image-id="arch-column-a2-denim-arch-full-view"] {
+  --image-ratio: 3 / 2;
+}
+
+.gallery-sequence .image-row [data-image-id="arch-column-b1-threshold-view"] {
+  --image-ratio: 140 / 169;
 }
 
 .row-single-portrait .image-placeholder,
@@ -1253,6 +1271,18 @@ body.lang-zh .statement {
     --image-ratio: 2 / 1;
   }
 
+  .gallery-sequence .image-row [data-image-id="arch-column-a1-installation-overview"] {
+    --image-ratio: 2 / 3;
+  }
+
+  .gallery-sequence .image-row [data-image-id="arch-column-a2-denim-arch-full-view"] {
+    --image-ratio: 3 / 2;
+  }
+
+  .gallery-sequence .image-row [data-image-id="arch-column-b1-threshold-view"] {
+    --image-ratio: 140 / 169;
+  }
+
   .image-placeholder figcaption {
     padding: 6px 0 0;
   }
@@ -1317,6 +1347,13 @@ body.lang-zh .statement {
   .row-single-portrait .image-placeholder {
     width: min(88vw, 420px);
     justify-self: center;
+  }
+
+  .gallery-sequence.arch-column-sequence .image-row [data-image-id="arch-column-a1-installation-overview"],
+  .gallery-sequence.arch-column-sequence .image-row [data-image-id="arch-column-a2-denim-arch-full-view"],
+  .gallery-sequence.arch-column-sequence .image-row [data-image-id="arch-column-b1-threshold-view"] {
+    width: 100%;
+    justify-self: stretch;
   }
 
   .project-nav {
