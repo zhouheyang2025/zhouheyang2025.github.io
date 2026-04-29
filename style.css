@@ -852,6 +852,23 @@ body.lang-zh .statement {
   --image-ratio: 3 / 1;
 }
 
+.gallery-sequence .image-row [data-image-id="fish-rice-a1-table-overview"],
+.gallery-sequence .image-row [data-image-id="fish-rice-b1-tagged-table"],
+.gallery-sequence .image-row [data-image-id="fish-rice-a2-tagged-table"] {
+  --image-ratio: 1100 / 389;
+}
+
+.gallery-sequence .image-row [data-image-id="fish-rice-a1-table-overview"] img,
+.gallery-sequence .image-row [data-image-id="fish-rice-b1-tagged-table"] img,
+.gallery-sequence .image-row [data-image-id="fish-rice-a2-tagged-table"] img,
+.gallery-sequence .image-row [data-image-id="arch-column-a1-installation-overview"] img {
+  object-fit: contain;
+}
+
+.gallery-sequence .image-row [data-image-id="arch-column-a1-installation-overview"] {
+  --image-ratio: 2 / 3;
+}
+
 .row-single-portrait .image-placeholder,
 .row-double-pp .image-placeholder,
 .row-triple-ppp .image-placeholder {
