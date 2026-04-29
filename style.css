@@ -190,8 +190,7 @@ main {
 }
 
 .text-link-row a,
-.project-meta-panel a,
-.site-footer-link {
+.project-meta-panel a {
   border-bottom: 1px solid currentColor;
 }
 
@@ -891,11 +890,6 @@ main {
   grid-column: 1 / span 3;
 }
 
-.site-footer-link {
-  grid-column: 5 / span 3;
-  justify-self: start;
-}
-
 .site-footer span:last-child {
   grid-column: 9 / -1;
   text-align: right;
@@ -928,14 +922,6 @@ main {
   .site-nav {
     justify-content: flex-start;
     gap: 12px clamp(18px, 4vw, 30px);
-  }
-
-  .site-footer-link {
-    grid-column: 3 / span 2;
-  }
-
-  .site-footer span:last-child {
-    grid-column: 5 / -1;
   }
 
   .home-footer span:last-child {
@@ -1045,7 +1031,6 @@ main {
   .process-header,
   .process-steps,
   .site-footer span:first-child,
-  .site-footer-link,
   .site-footer span:last-child {
     grid-column: 1;
   }
