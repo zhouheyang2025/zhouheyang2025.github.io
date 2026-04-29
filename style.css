@@ -1215,8 +1215,8 @@ main {
   }
 
   .project-nav {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 16px;
+    grid-template-columns: 1fr;
+    gap: 18px;
     margin-top: 34px;
   }
 
@@ -1225,7 +1225,13 @@ main {
   }
 
   .project-nav-next {
-    grid-column: 2;
+    grid-column: 1;
+    text-align: left;
+  }
+
+  .project-nav-link {
+    min-height: 54px;
+    padding: 15px 0 2px;
   }
 
   .site-footer span:last-child {
@@ -1277,10 +1283,6 @@ main {
   .project-nav-prev,
   .project-nav-next {
     grid-column: 1;
-  }
-
-  .project-nav-next {
-    text-align: left;
   }
 }
 
