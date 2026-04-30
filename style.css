@@ -1468,4 +1468,20 @@ body:not(.has-project-preview) .project-preview-image {
     object-fit: cover;
     object-position: center;
   }
+}/* Fish and Rice — tighten multi-image row gaps on desktop only */
+@media (min-width: 861px) {
+  .fish-rice-sequence .row-double-ll,
+  .fish-rice-sequence .row-double-pp,
+  .fish-rice-sequence .row-double-pl,
+  .fish-rice-sequence .row-double-lp,
+  .fish-rice-sequence .row-triple-lll,
+  .fish-rice-sequence .row-triple-ppp,
+  .fish-rice-sequence .row-triple-ppl,
+  .fish-rice-sequence .row-triple-pll {
+    column-gap: clamp(6px, 0.75vw, 10px);
+  }
+
+  .fish-rice-sequence .gallery-group {
+    column-gap: clamp(6px, 0.75vw, 10px);
+  }
 }
