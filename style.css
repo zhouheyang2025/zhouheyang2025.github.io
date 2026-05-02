@@ -1484,4 +1484,13 @@ body:not(.has-project-preview) .project-preview-image {
   .fish-rice-sequence .gallery-group {
     column-gap: clamp(6px, 0.75vw, 10px);
   }
+}/* Force selected Arch / Column image to stretch into the frame */
+.arch-column-sequence .image-row [data-image-id="arch-column-b1-threshold-view"] img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: fill !important;
+  object-position: center center !important;
+  transform: none !important;
 }
