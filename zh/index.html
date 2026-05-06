@@ -10,10 +10,16 @@
 <body class="lang-zh">
   <div class="project-preview" aria-hidden="true"></div>
 
-  <header class="site-header">
+  <header class="site-header home-header">
     <a class="site-title" href="index.html" aria-label="首页">作品档案</a>
 
-    <nav class="site-nav" aria-label="主导航">
+    <button class="site-menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="打开导航菜单">
+      <span class="menu-toggle-line" aria-hidden="true"></span>
+      <span class="menu-toggle-line" aria-hidden="true"></span>
+      <span class="menu-toggle-line" aria-hidden="true"></span>
+    </button>
+
+    <nav class="site-nav" id="primary-navigation" aria-label="主导航">
       <a href="works.html">作品</a>
       <a href="about.html">信息</a>
       <a href="contact.html">联系</a>

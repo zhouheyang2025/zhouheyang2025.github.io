@@ -1,5 +1,6 @@
 document.documentElement.classList.add("js-enabled");
 
+const menuToggles = document.querySelectorAll(".site-menu-toggle");
 const previewLayer = document.querySelector(".project-preview");
 const previewRows = document.querySelectorAll("[data-preview-images], [data-preview]");
 const hoverPreviewQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
@@ -194,3 +195,50 @@ function bindHoverPreviewEvents() {
 if (hoverPreviewQuery.matches) {
   bindHoverPreviewEvents();
 }
+
+menuToggles.forEach((toggle) => {
+  const header = toggle.closest(".site-header");
+  const controlledId = toggle.getAttribute("aria-controls");
+  const menu = controlledId ? document.getElementById(controlledId) : null;
+
+  if (!header || !menu) {
+    return;
+  }
+
+  const closeMenu = () => {
+    header.classList.remove("is-menu-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", toggle.dataset.openLabel || "Open navigation menu");
+  };
+
+  const openMenu = () => {
+    header.classList.add("is-menu-open");
+    toggle.setAttribute("aria-expanded", "true");
+    toggle.setAttribute("aria-label", toggle.dataset.closeLabel || "Close navigation menu");
+  };
+
+  toggle.dataset.openLabel = toggle.getAttribute("aria-label") || "Open navigation menu";
+  toggle.dataset.closeLabel = document.documentElement.lang === "zh-CN"
+    ? "关闭导航菜单"
+    : "Close navigation menu";
+
+  toggle.addEventListener("click", () => {
+    if (header.classList.contains("is-menu-open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  menu.addEventListener("click", (event) => {
+    if (event.target instanceof Element && event.target.closest("a")) {
+      closeMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+    }
+  });
+});

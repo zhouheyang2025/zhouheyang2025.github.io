@@ -10,10 +10,16 @@
 <body>
   <div class="project-preview" aria-hidden="true"></div>
 
-  <header class="site-header">
+  <header class="site-header home-header">
     <a class="site-title" href="index.html" aria-label="Homepage">Archive Index</a>
 
-    <nav class="site-nav" aria-label="Primary navigation">
+    <button class="site-menu-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open navigation menu">
+      <span class="menu-toggle-line" aria-hidden="true"></span>
+      <span class="menu-toggle-line" aria-hidden="true"></span>
+      <span class="menu-toggle-line" aria-hidden="true"></span>
+    </button>
+
+    <nav class="site-nav" id="primary-navigation" aria-label="Primary navigation">
       <a href="works.html">Works</a>
       <a href="about.html">Info</a>
       <a href="contact.html">Contact</a>
