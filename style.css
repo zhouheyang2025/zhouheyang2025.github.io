@@ -1425,7 +1425,7 @@ body.lang-zh .project-list .project-title {
 
   .home-composition {
     min-height: calc(100svh - 110px);
-    padding: 0 0 40px;
+    padding: 0 0 56px;
     align-content: end;
     row-gap: 0;
   }
