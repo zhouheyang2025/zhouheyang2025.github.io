@@ -1418,14 +1418,22 @@ body.lang-zh .project-list .project-title {
   }
 
   .home-header .site-nav {
-    grid-column: 2;
+    position: absolute;
+    top: calc(28px + 1.08rem + 14px);
+    right: 0;
     display: grid;
     grid-template-columns: 1fr;
     justify-items: end;
-    justify-self: end;
-    gap: 9px;
-    margin-top: 6px;
+    gap: 15px;
+    margin-top: 0;
     text-align: right;
+    z-index: 2;
+  }
+
+  .home-header .site-nav a {
+    display: grid;
+    min-height: 28px;
+    align-items: center;
   }
 
   .js-enabled .home-header .site-nav {
