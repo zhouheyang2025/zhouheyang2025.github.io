@@ -1111,6 +1111,11 @@ body.lang-zh .project-list .project-title {
     gap: 12px 20px;
   }
 
+  .site-footer {
+    gap: 8px;
+    padding: 12px 0 8px;
+  }
+
   .home-composition {
     min-height: auto;
     padding: 42px 0 58px;
@@ -1419,8 +1424,8 @@ body.lang-zh .project-list .project-title {
   }
 
   .home-composition {
-    min-height: calc(100svh - 154px);
-    padding: 0 0 48px;
+    min-height: calc(100svh - 110px);
+    padding: 0 0 40px;
     align-content: end;
     row-gap: 0;
   }
@@ -1474,8 +1479,8 @@ body.lang-zh .project-list .project-title {
 
   .home-footer {
     grid-template-columns: minmax(0, 1fr) max-content;
-    gap: 18px;
-    padding: 24px 0 20px;
+    gap: 14px;
+    padding: 14px 0 6px;
     border-top-color: var(--line-strong);
   }
 
