@@ -67,11 +67,24 @@ body.has-project-preview {
 a {
   color: inherit;
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 a:focus-visible {
   outline: 1px solid var(--ink);
   outline-offset: 5px;
+}
+
+a:active {
+  color: var(--muted);
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:active {
+  color: var(--muted);
 }
 
 ::selection {
